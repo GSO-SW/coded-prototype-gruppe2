@@ -1,3 +1,41 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+    justify-content: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#bottom-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: calc(20rem/16);
+}
+
+a {
+    width: fit-content;
+}
+
+h1 {
+    font-size: calc(55rem/16);
+    font-weight: bold;
+}
