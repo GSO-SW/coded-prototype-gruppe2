@@ -7,145 +7,167 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite App</title>
   </head>
-  <body>
-    <div id="app" class="flex flex-col w-screen h-screen divide-y divide-black">
-      <div class="flex flex-col items-center">
-        <div class="text-4xl font-bold">Zafer Sigil</div>
-        <div class="flex w-full text-xl font-medium justify-evenly">
+  <body class="font-mono">
+    <div id="app" class="flex flex-col w-screen h-screen">
+      <div
+        class="flex flex-col items-center md:justify-center md:mt-24 md:flex-row md:mx-8"
+      >
+        <div class="my-2 text-4xl font-bold whitespace-nowrap">Zafer Sigil</div>
+        <div class="flex w-full text-xl font-medium text-center justify-evenly">
           <div>Ausbildungsjahr 3</div>
           <div>Azubi Nr. 273878</div>
         </div>
         <div class="flex w-full text-xl font-medium justify-evenly">
           <label class="flex flex-col items-center" for="week-start">
             Woche Start
-            <input id="week-start" type="date" />
+            <input id="week-start" type="date" value="2023-10-01" />
           </label>
           <label class="flex flex-col items-center" for="week-end">
             Woche Ende
-            <input id="week-end" type="date" />
+            <input id="week-end" type="date" value="2023-10-07" />
           </label>
         </div>
-        <ul class="flex w-screen gap-2 px-2 pb-4 my-2 overflow-x-auto">
-          <li class="text-center min-w-[calc(326px/7)]">
-            <div class="flex flex-col items-center gap-1">
-              <div class="flex items-center justify-center font-extrabold w-9">
-                Mo
-              </div>
-              <div
-                class="flex items-center justify-center bg-gray-400 border-4 border-black w-9 h-9"
-              >
-                1
-              </div>
-            </div>
-          </li>
-          <li class="text-center min-w-[calc(326px/7)]">
-            <div class="flex flex-col items-center gap-1">
-              <div class="flex items-center justify-center font-extrabold w-9">
-                Di
-              </div>
-              <div
-                class="flex items-center justify-center border-2 border-black w-9 h-9"
-              >
-                2
-              </div>
-            </div>
-          </li>
-          <li class="text-center min-w-[calc(326px/7)]">
-            <div class="flex flex-col items-center gap-1">
-              <div class="flex items-center justify-center font-extrabold w-9">
-                Mi
-              </div>
-              <div
-                class="flex items-center justify-center border-2 border-black w-9 h-9"
-              >
-                3
-              </div>
-            </div>
-          </li>
-          <li class="text-center min-w-[calc(326px/7)]">
-            <div class="flex flex-col items-center gap-1">
-              <div class="flex items-center justify-center font-extrabold w-9">
-                Do
-              </div>
-              <div
-                class="flex items-center justify-center border-2 border-black w-9 h-9"
-              >
-                4
-              </div>
-            </div>
-          </li>
-          <li class="text-center min-w-[calc(326px/7)]">
-            <div class="flex flex-col items-center gap-1">
-              <div class="flex items-center justify-center font-extrabold w-9">
-                Fr
-              </div>
-              <div
-                class="flex items-center justify-center border-2 border-black w-9 h-9"
-              >
-                5
-              </div>
-            </div>
-          </li>
-          <li class="text-center min-w-[calc(326px/7)]">
-            <div class="flex flex-col items-center gap-1">
-              <div class="flex items-center justify-center font-extrabold w-9">
-                Sa
-              </div>
-              <div
-                class="flex items-center justify-center border-2 border-black w-9 h-9"
-              >
-                6
-              </div>
-            </div>
-          </li>
-          <li class="text-center min-w-[calc(326px/7)]">
-            <div class="flex flex-col items-center gap-1">
-              <div class="flex items-center justify-center font-extrabold w-9">
-                So
-              </div>
-              <div
-                class="flex items-center justify-center border-2 border-black w-9 h-9"
-              >
-                7
-              </div>
-            </div>
-          </li>
-          <li class="text-center min-w-[calc(326px/7)]">
-            <div class="flex flex-col items-center gap-1">
-              <div class="flex items-center justify-center font-extrabold w-9">
-                Mo
-              </div>
-              <div
-                class="flex items-center justify-center border-2 border-black w-9 h-9"
-              >
-                8
-              </div>
-            </div>
-          </li>
-          <li class="text-center min-w-[calc(326px/7)]">
-            <div class="flex flex-col items-center gap-1">
-              <div class="flex items-center justify-center font-extrabold w-9">
-                Di
-              </div>
-              <div
-                class="flex items-center justify-center border-2 border-black w-9 h-9"
-              >
-                9
-              </div>
-            </div>
-          </li>
-        </ul>
       </div>
-      <div class="flex-1 w-full px-2 overflow-y-auto bg-white-400">
+      <ul class="flex w-screen gap-2 px-2 pb-4 my-2 overflow-x-auto">
+        <li
+          class="text-center min-w-[calc(100%/7-8px)] md:min-w-[calc(100%/7-8px)]"
+        >
+          <div class="flex flex-col items-center gap-1">
+            <div class="flex items-center justify-center font-extrabold w-9">
+              Mo
+            </div>
+            <button
+              class="flex items-center justify-center bg-gray-400 border-4 border-black rounded-xl w-9 h-9 md:w-full md:h-14"
+            >
+              1
+            </button>
+          </div>
+        </li>
+        <li
+          class="text-center min-w-[calc(100%/7-8px)] md:min-w-[calc(100%/7-8px)]"
+        >
+          <div class="flex flex-col items-center gap-1">
+            <div class="flex items-center justify-center font-extrabold w-9">
+              Di
+            </div>
+            <button
+              class="flex items-center justify-center border-2 border-black rounded-lg w-9 h-9 md:w-full md:h-14"
+            >
+              2
+            </button>
+          </div>
+        </li>
+        <li
+          class="text-center min-w-[calc(100%/7-8px)] md:min-w-[calc(100%/7-8px)]"
+        >
+          <div class="flex flex-col items-center gap-1">
+            <div class="flex items-center justify-center font-extrabold w-9">
+              Mi
+            </div>
+            <button
+              class="flex items-center justify-center border-2 border-black rounded-lg w-9 h-9 md:w-full md:h-14"
+            >
+              3
+            </button>
+          </div>
+        </li>
+        <li
+          class="text-center min-w-[calc(100%/7-8px)] md:min-w-[calc(100%/7-8px)]"
+        >
+          <div class="flex flex-col items-center gap-1">
+            <div class="flex items-center justify-center font-extrabold w-9">
+              Do
+            </div>
+            <button
+              class="flex items-center justify-center border-2 border-black rounded-lg w-9 h-9 md:w-full md:h-14"
+            >
+              4
+            </button>
+          </div>
+        </li>
+        <li
+          class="text-center min-w-[calc(100%/7-8px)] md:min-w-[calc(100%/7-8px)]"
+        >
+          <div class="flex flex-col items-center gap-1">
+            <div class="flex items-center justify-center font-extrabold w-9">
+              Fr
+            </div>
+            <button
+              class="flex items-center justify-center border-2 border-black rounded-lg w-9 h-9 md:w-full md:h-14"
+            >
+              5
+            </button>
+          </div>
+        </li>
+        <li
+          class="text-center min-w-[calc(100%/7-8px)] md:min-w-[calc(100%/7-8px)]"
+        >
+          <div class="flex flex-col items-center gap-1">
+            <div class="flex items-center justify-center font-extrabold w-9">
+              Sa
+            </div>
+            <button
+              class="flex items-center justify-center border-2 border-black rounded-lg w-9 h-9 md:w-full md:h-14"
+            >
+              6
+            </button>
+          </div>
+        </li>
+        <li
+          class="text-center min-w-[calc(100%/7-8px)] md:min-w-[calc(100%/7-8px)]"
+        >
+          <div class="flex flex-col items-center gap-1">
+            <div class="flex items-center justify-center font-extrabold w-9">
+              So
+            </div>
+            <button
+              class="flex items-center justify-center border-2 border-black rounded-lg w-9 h-9 md:w-full md:h-14"
+            >
+              7
+            </button>
+          </div>
+        </li>
+        <li
+          class="text-center min-w-[calc(100%/7-8px)] md:min-w-[calc(100%/7-8px)]"
+        >
+          <div class="flex flex-col items-center gap-1">
+            <div class="flex items-center justify-center font-extrabold w-9">
+              Mo
+            </div>
+            <button
+              class="flex items-center justify-center border-2 border-black rounded-lg w-9 h-9 md:w-full md:h-14"
+            >
+              8
+            </button>
+          </div>
+        </li>
+        <li
+          class="text-center min-w-[calc(100%/7-8px)] md:min-w-[calc(100%/7-8px)]"
+        >
+          <div class="flex flex-col items-center gap-1">
+            <div class="flex items-center justify-center font-extrabold w-9">
+              Di
+            </div>
+            <button
+              class="flex items-center justify-center border-2 border-black rounded-lg w-9 h-9 md:w-full md:h-14"
+            >
+              9
+            </button>
+          </div>
+        </li>
+      </ul>
+      <div
+        class="flex-1 w-full px-2 overflow-y-auto border-t border-black bg-white-400"
+      >
         <div
-          class="flex flex-col gap-2 my-2 border border-black divide-y divide-black bg-white-600"
+          class="flex flex-col gap-2 my-2 border border-black divide-y divide-black bg-white-600 rounded-2xl"
         >
           <div class="flex py-2">
             <div class="flex flex-col flex-1 pl-4 text-xl font-bold">
               <h3>Montag 1. September 2023</h3>
               <div class="flex gap-2 pl-6 text-lg text-gray-600">
                 <h4>Abteilung</h4>
-                <button>✏️</button>
+                <button class="font-sans">✏️</button>
               </div>
             </div>
             <button class="flex items-center justify-end pr-4 text-5xl h-fit">
@@ -160,14 +182,14 @@
           </div>
         </div>
         <div
-          class="flex flex-col gap-2 my-2 border border-black divide-y divide-black bg-white-600"
+          class="flex flex-col gap-2 my-2 border border-black divide-y divide-black bg-white-600 rounded-2xl"
         >
           <div class="flex py-2">
             <div class="flex flex-col flex-1 pl-4 text-xl font-bold">
               <h3>Dienstag 2. September 2023</h3>
               <div class="flex gap-2 pl-6 text-lg text-gray-600">
                 <h4>Abteilung</h4>
-                <button>✏️</button>
+                <button class="font-sans">✏️</button>
               </div>
             </div>
             <button class="flex items-center justify-end pr-4 text-5xl h-fit">
@@ -182,14 +204,14 @@
           </div>
         </div>
         <div
-          class="flex flex-col gap-2 my-2 border border-black divide-y divide-black bg-white-600"
+          class="flex flex-col gap-2 my-2 border border-black divide-y divide-black bg-white-600 rounded-2xl"
         >
           <div class="flex py-2">
             <div class="flex flex-col flex-1 pl-4 text-xl font-bold">
               <h3>Mittwoch 3. September 2023</h3>
               <div class="flex gap-2 pl-6 text-lg text-gray-600">
                 <h4>Abteilung</h4>
-                <button>✏️</button>
+                <button class="font-sans">✏️</button>
               </div>
             </div>
             <button class="flex items-center justify-end pr-4 text-5xl h-fit">
@@ -204,13 +226,40 @@
           </div>
         </div>
       </div>
-      <div class="grid h-24 grid-cols-5 py-2 divide-x divide-black">
-        <button class="text-4xl text-center">✒️</button>
-        <button class="text-4xl text-center">✈️</button>
-        <button class="text-4xl text-center">📖</button>
-        <button class="text-4xl text-center">🔎</button>
-        <button class="text-4xl text-center">🍔</button>
-      </div>
+      <!-- <nav
+        class="grid h-20 grid-cols-5 py-2 font-sans divide-x divide-black md:fixed md:right-0 md:divide-x-0 md:bg-white md:grid-cols-none md:grid-rows-5 md:h-full md:divide-y md:w-20"
+      > -->
+      <nav
+        class="grid h-20 grid-cols-5 py-2 font-sans border-t border-black divide-x divide-black shadow-lg md:grid-cols-7 md:border-b md:fixed md:w-full md:bg-white"
+      >
+        <button class="block text-4xl text-center md:hidden">✒️</button>
+        <button class="block text-4xl text-center md:hidden">✈️</button>
+        <button class="block text-4xl text-center md:hidden">📖</button>
+        <button class="block text-4xl text-center md:hidden">🔎</button>
+        <button class="block text-4xl text-center md:hidden">🍔</button>
+
+        <button class="hidden text-2xl font-semibold text-center md:block">
+          ✒️ Signieren
+        </button>
+        <button class="hidden text-2xl font-semibold text-center md:block">
+          ✈️ Absenden
+        </button>
+        <button class="hidden text-2xl font-semibold text-center md:block">
+          📖 Berichte
+        </button>
+        <button class="hidden text-2xl font-semibold text-center md:block">
+          🔎 Suchen
+        </button>
+        <button class="hidden text-2xl font-semibold text-center md:block">
+          ⬇️ Export
+        </button>
+        <button class="hidden text-2xl font-semibold text-center md:block">
+          👤 Profil
+        </button>
+        <button class="hidden text-2xl font-semibold text-center md:block">
+          ↪ Logout
+        </button>
+      </nav>
     </div>
   </body>
 </html>
