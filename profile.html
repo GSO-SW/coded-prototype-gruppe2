@@ -1,80 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="vite.svg" />
+    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
 
-<head>
-  <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="vite.svg" />
-  <link rel="stylesheet" href="style.css" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vite App</title>
-
-  <style>
-
-    /* Chrome, Safari, Edge, Opera */
-        input::-webkit-outer-spin-button,
-        input::-webkit-inner-spin-button {
+    <style>
+      /* Chrome, Safari, Edge, Opera */
+      input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
         -webkit-appearance: none;
         margin: 0;
-        }
+      }
 
-        /* Firefox */
-        input[type=number] {
-            -moz-appearance: textfield;
-        }
+      /* Firefox */
+      input[type="number"] {
+        -moz-appearance: textfield;
+      }
+    </style>
+  </head>
 
-  </style>
-</head>
-
-<body class="w-screen h-screen flex items-center justify-center">
-
-    <div class="absolute top-0 left-0 m-4 text-2xl cursor-pointer" id="backButton">🔙</div>
-<!--     <div class="absolute top-4 left-4 text-2xl cursor-pointer md:relative md:top-0 md:left-0 md:text-base md:mr-4" id="backButton">🔙</div>
- -->
-  <div>
-    <div class="flex flex-row items-center space-x-2">
-        <div class="text-4xl ">👤</div>
-        <h1 >Profil</h1>
+  <body class="w-screen h-screen flex items-center justify-center">
+    <div
+      class="absolute top-0 left-0 m-4 text-2xl cursor-pointer"
+      id="backButton"
+    >
+      🔙
     </div>
-    <form>
+    <!--     <div class="absolute top-4 left-4 text-2xl cursor-pointer md:relative md:top-0 md:left-0 md:text-base md:mr-4" id="backButton">🔙</div>
+ -->
+    <div>
+      <div class="flex flex-row items-center space-x-2">
+        <div class="text-4xl">👤</div>
+        <h1>Profil</h1>
+      </div>
+      <form>
         <label for="name">Name:</label>
-        <input class="border border-solid border-black" 
-        type="text" id="name" required name="name">
+        <input
+          class="border border-solid border-black"
+          type="text"
+          id="name"
+          required
+          name="name"
+        />
 
         <label for="ausb_nummer">Ausbildungsnummer</label>
-        <input type="number" id="ausb_nummer" name="ausb_nummer" required class="border border-solid border-black">
+        <input
+          type="number"
+          id="ausb_nummer"
+          name="ausb_nummer"
+          required
+          class="border border-solid border-black"
+        />
 
         <label for="ausb_start">Ausbildungsbeginn</label>
-        <input type="text" id="ausb_start" name="ausb_start" required class="border border-solid border-black">
+        <input
+          type="text"
+          id="ausb_start"
+          name="ausb_start"
+          required
+          class="border border-solid border-black"
+        />
 
         <label for="ausbilder">Ausbilder</label>
-        <input type="text" id="ausbilder" name="ausbilder" required class="border border-solid border-black">
+        <input
+          type="text"
+          id="ausbilder"
+          name="ausbilder"
+          required
+          class="border border-solid border-black"
+        />
 
         <label for="abteilung">Standard Abteilung</label>
-        <input type="text" id="abteilung" name="abteilung" required class="border border-solid border-black">
+        <input
+          type="text"
+          id="abteilung"
+          name="abteilung"
+          required
+          class="border border-solid border-black"
+        />
 
-        <button type="submit"
-        class="mt-8 bg-blue-500 text-white font-bold py-2 px-4 rounded shadow-lg hover:bg-blue-400 transition duration-300 justify-end">
-            Speichern
-          </button>
-    </form>
-    
-  </div>
+        <button
+          type="submit"
+          class="mt-8 bg-blue-500 text-white font-bold py-2 px-4 rounded shadow-lg hover:bg-blue-400 transition duration-300 justify-end"
+        >
+          Speichern
+        </button>
+      </form>
+    </div>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', (event) => {
-      const form = document.querySelector('form');
-      form.addEventListener('submit', function (e) {
-        e.preventDefault();
-        alert('Formular gesendet!');
+    <script>
+      document.addEventListener("DOMContentLoaded", (event) => {
+        const form = document.querySelector("form");
+        form.addEventListener("submit", function (e) {
+          e.preventDefault();
+          alert("Formular gesendet!");
+        });
       });
-    });
 
-    document.getElementById('backButton').addEventListener('click', function() {
-    //alert('Zurück-Button wurde geklickt!');
-        window.history.back();
-    });
-  </script>
+      document
+        .getElementById("backButton")
+        .addEventListener("click", function () {
+          //alert('Zurück-Button wurde geklickt!');
+          window.history.back();
+        });
 
-</body>
-
+      document.addEventListener("DOMContentLoaded", (event) => {
+        document.getElementById("name").value = faker.name.findName();
+        document.getElementById("ausb_nummer").value = faker.random.number({
+          min: 1000,
+          max: 9999,
+        });
+        document.getElementById("ausb_start").value = faker.date
+          .past()
+          .toLocaleDateString();
+        document.getElementById("ausbilder").value = faker.name.findName();
+        document.getElementById("abteilung").value =
+          faker.commerce.department();
+      });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Faker/3.1.0/faker.min.js"></script>
+  </body>
 </html>
