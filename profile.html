@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="vite.svg" />
+  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vite App</title>
+
+  <style>
+
+    /* Chrome, Safari, Edge, Opera */
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+        }
+
+        /* Firefox */
+        input[type=number] {
+            -moz-appearance: textfield;
+        }
+
+  </style>
+</head>
+
+<body class="w-screen h-screen">
+  <div id="main-content">
+    <div class="flex flex-row">
+        <div class="text-4xl text-center justify-center">👤</div>
+        <h1>Profil</h1>
+    </div>
+    <form>
+        <label for="name">Name:</label>
+        <input class="border border-solid border-black" 
+        type="text" id="name" required name="name">
+
+        <label for="ausb_nummer">Ausbildungsnummer</label>
+        <input type="number" id="ausb_nummer" name="ausb_nummer" required class="border border-solid border-black">
+
+        <label for="ausb_start">Ausbildungsbeginn</label>
+        <input type="text" id="ausb_start" name="ausb_start" required class="border border-solid border-black">
+
+        <label for="ausbilder">Ausbilder</label>
+        <input type="text" id="ausbilder" name="ausbilder" required class="border border-solid border-black">
+
+        <label for="abteilung">Standard Abteilung</label>
+        <input type="text" id="abteilung" name="abteilung" required class="border border-solid border-black">
+
+        <button type="submit"
+        class="mt-8 bg-blue-500 text-white font-bold py-2 px-4 rounded shadow-lg hover:bg-blue-400 transition duration-300 justify-end">
+            Speichern
+          </button>
+    </form>
+    
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+      const form = document.querySelector('form');
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        alert('Formular gesendet!');
+      });
+    });
+  </script>
+
+</body>
+
+</html>
