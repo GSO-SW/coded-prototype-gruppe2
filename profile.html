@@ -25,11 +25,15 @@
   </style>
 </head>
 
-<body class="w-screen h-screen">
-  <div id="main-content">
-    <div class="flex flex-row">
-        <div class="text-4xl text-center justify-center">👤</div>
-        <h1>Profil</h1>
+<body class="w-screen h-screen flex items-center justify-center">
+
+    <div class="absolute top-0 left-0 m-4 text-2xl cursor-pointer" id="backButton">🔙</div>
+<!--     <div class="absolute top-4 left-4 text-2xl cursor-pointer md:relative md:top-0 md:left-0 md:text-base md:mr-4" id="backButton">🔙</div>
+ -->
+  <div>
+    <div class="flex flex-row items-center space-x-2">
+        <div class="text-4xl ">👤</div>
+        <h1 >Profil</h1>
     </div>
     <form>
         <label for="name">Name:</label>
@@ -63,6 +67,11 @@
         e.preventDefault();
         alert('Formular gesendet!');
       });
+    });
+
+    document.getElementById('backButton').addEventListener('click', function() {
+    //alert('Zurück-Button wurde geklickt!');
+        window.history.back();
     });
   </script>
 
