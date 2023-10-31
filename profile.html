@@ -22,105 +22,88 @@
     </style>
   </head>
 
-  <body class="w-screen h-screen flex items-center justify-center">
-    <div
-      class="absolute top-0 left-0 m-4 text-2xl cursor-pointer"
-      id="backButton"
-    >
-      🔙
-    </div>
-    <!--     <div class="absolute top-4 left-4 text-2xl cursor-pointer md:relative md:top-0 md:left-0 md:text-base md:mr-4" id="backButton">🔙</div>
- -->
-    <div>
-      <div class="flex flex-row items-center space-x-2">
-        <div class="text-4xl">👤</div>
-        <h1>Profil</h1>
+    <body class="bg-gray-100 p-10">
+
+      <div class="bg-white p-8 rounded-lg shadow-md w-96">
+        <div class="flex items-center mb-6">
+            <button class="mr-4 text-gray-600" id="backButton">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-6 w-6">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                </svg>
+            </button>
+        </div>
+        <div class="flex items-center justify-center mb-6">
+            <span class="text-2xl font-bold flex items-center">
+                <div class="text-4xl mr-4">👤</div>
+                <h1>Profil</h1> 
+            </span>      
+        </div>
+          <form>
+              <div class="mb-4">
+                  <label for="Name" class="block text-sm font-medium text-gray-600">Name</label>
+                  <input type="text" id="name" name="Name" placeholder="Name" class="mt-1 p-2 w-full border rounded-md text-lg">
+              </div>
+              <div class="mb-4">
+                  <label for="ausb_nummer" class="block text-sm font-medium text-gray-600">Ausbildungsnummer</label>
+                  <input type="text" id="ausb_nummer" name="ausb_nummer" placeholder="Ausbildungsnummer" class="mt-1 p-2 w-full border rounded-md text-lg">
+              </div>
+                  <div class="mb-4">
+                    <label for="ausb_start" class="block text-sm font-medium text-gray-600">Ausbildungsbeginn</label>
+                    <input type="date" id="ausb_start" name="ausb_start" placeholder="tt.mm.jjjj" class="mt-1 p-2 w-full border rounded-md text-lg">      
+              </div>
+              <div class="mb-4">
+                  <label for="ausbilder" class="block text-sm font-medium text-gray-600">Ausbilder</label>
+                  <input type="text" id="ausbilder" name="ausbilder" placeholder="ausbilder" class="mt-1 p-2 w-full border rounded-md text-lg">
+              </div>
+              <div class="mb-4">
+                  <label for="abteilung" class="block text-sm font-medium text-gray-600">Standard Abteilung</label>
+                  <input type="text" id="abteilung" name="abteilung" placeholder="abteilung Abteilung" class="mt-1 p-2 w-full border rounded-md text-lg">
+              </div>
+              <div class="mt-4 flex justify-end ">
+                  <button type="submit" class="bg-black text-white p-2 rounded-md hover:bg-gray-900">Speichern</button>
+              </div>
+          </form>
       </div>
-      <form>
-        <label for="name">Name:</label>
-        <input
-          class="border border-solid border-black"
-          type="text"
-          id="name"
-          required
-          name="name"
-        />
+  
+      <script>
+        function formatDateToInput(date) {
+            const dd = String(date.getDate()).padStart(2, '0');
+            const mm = String(date.getMonth() + 1).padStart(2, '0'); // Monate sind von 0 bis 11 in JavaScript
+            const yyyy = date.getFullYear();
 
-        <label for="ausb_nummer">Ausbildungsnummer</label>
-        <input
-          type="number"
-          id="ausb_nummer"
-          name="ausb_nummer"
-          required
-          class="border border-solid border-black"
-        />
+            return yyyy + '-' + mm + '-' + dd;
+        }
 
-        <label for="ausb_start">Ausbildungsbeginn</label>
-        <input
-          type="text"
-          id="ausb_start"
-          name="ausb_start"
-          required
-          class="border border-solid border-black"
-        />
-
-        <label for="ausbilder">Ausbilder</label>
-        <input
-          type="text"
-          id="ausbilder"
-          name="ausbilder"
-          required
-          class="border border-solid border-black"
-        />
-
-        <label for="abteilung">Standard Abteilung</label>
-        <input
-          type="text"
-          id="abteilung"
-          name="abteilung"
-          required
-          class="border border-solid border-black"
-        />
-
-        <button
-          type="submit"
-          class="mt-8 bg-blue-500 text-white font-bold py-2 px-4 rounded shadow-lg hover:bg-blue-400 transition duration-300 justify-end"
-        >
-          Speichern
-        </button>
-      </form>
-    </div>
-
-    <script>
-      document.addEventListener("DOMContentLoaded", (event) => {
-        const form = document.querySelector("form");
-        form.addEventListener("submit", function (e) {
-          e.preventDefault();
-          alert("Formular gesendet!");
+        document.addEventListener("DOMContentLoaded", (event) => {
+          const form = document.querySelector("form");
+          form.addEventListener("submit", function (e) {
+            e.preventDefault();
+            alert("Formular gesendet!");
+          });
         });
-      });
+    
+        document
+          .getElementById("backButton")
+          .addEventListener("click", function () {
+            //alert('Zurück-Button wurde geklickt!');
+            window.history.back();
+          });
+    
+        document.addEventListener("DOMContentLoaded", (event) => {
+          document.getElementById("name").value = faker.name.findName();
+          document.getElementById("ausb_nummer").value = faker.random.number({
+            min: 1000,
+            max: 9999,
+          });
+            document.getElementById("ausb_start").value = formatDateToInput(faker.date.past());
 
-      document
-        .getElementById("backButton")
-        .addEventListener("click", function () {
-          //alert('Zurück-Button wurde geklickt!');
-          window.history.back();
+          document.getElementById("ausbilder").value = faker.name.findName();
+          document.getElementById("abteilung").value =
+            faker.commerce.department();
         });
-
-      document.addEventListener("DOMContentLoaded", (event) => {
-        document.getElementById("name").value = faker.name.findName();
-        document.getElementById("ausb_nummer").value = faker.random.number({
-          min: 1000,
-          max: 9999,
-        });
-        document.getElementById("ausb_start").value = faker.date
-          .past()
-          .toLocaleDateString();
-        document.getElementById("ausbilder").value = faker.name.findName();
-        document.getElementById("abteilung").value =
-          faker.commerce.department();
-      });
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Faker/3.1.0/faker.min.js"></script>
+      </script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/Faker/3.1.0/faker.min.js"></script> 
   </body>
+
+
 </html>
