@@ -377,6 +377,23 @@
       <!-- <nav
         class="grid h-20 grid-cols-5 py-2 font-sans divide-x divide-black md:fixed md:right-0 md:divide-x-0 md:bg-white md:grid-cols-none md:grid-rows-5 md:h-full md:divide-y md:w-20"
       > -->
+      <dialog
+        id="burger-modal"
+        class="mb-20 mr-0 w-[80%] border-l border-t border-black backdrop:bg-transparent"
+      >
+        <form method="dialog" class="divide-y divide-black">
+          <button class="w-full text-2xl p-2 px-4 text-left">⬇️ Export</button>
+
+          <a class="w-full text-2xl p-2 px-4 text-left" href="/profile.html">
+            👤 Profil
+          </a>
+
+          <a class="w-full text-2xl p-2 px-4 text-left" href="/index.html">
+            ↪ Logout
+          </a>
+        </form>
+      </dialog>
+
       <nav
         class="grid h-20 grid-cols-5 py-2 font-sans border-t border-black divide-x divide-black shadow-lg md:grid-cols-7 md:border-b md:fixed md:w-full md:bg-white"
       >
@@ -384,7 +401,12 @@
         <button class="block text-4xl text-center md:hidden">✈️</button>
         <button class="block text-4xl text-center md:hidden">📖</button>
         <button class="block text-4xl text-center md:hidden">🔎</button>
-        <button class="block text-4xl text-center md:hidden">🍔</button>
+        <button
+          onclick="toggleModal()"
+          class="block text-4xl text-center md:hidden"
+        >
+          🍔
+        </button>
 
         <button class="hidden text-2xl font-semibold text-center md:block">
           ✒️ Signieren
@@ -401,15 +423,34 @@
         <button class="hidden text-2xl font-semibold text-center md:block">
           ⬇️ Export
         </button>
-        <button class="hidden text-2xl font-semibold text-center md:block">
-          👤
-          <a href="/profile.html"> Profil</a>
-        </button>
-        <button class="hidden text-2xl font-semibold text-center md:block">
-          ↪
-          <a href="/index.html"> Logout</a>
-        </button>
+        <a
+          class="w-full hidden text-2xl font-semibold text-center md:flex md:justify-center md:items-center"
+          href="/profile.html"
+        >
+          👤 Profil
+        </a>
+        <a
+          class="w-full hidden text-2xl font-semibold text-center md:flex md:justify-center md:items-center"
+          href="/index.html"
+        >
+          ↪ Logout
+        </a>
       </nav>
     </div>
+    <script>
+      const dialog = document.getElementById("burger-modal");
+
+      function toggleModal() {
+        if (dialog.open) {
+          dialog.close();
+        } else {
+          dialog.showModal();
+        }
+      }
+
+      dialog.addEventListener("click", (e) => {
+        toggleModal();
+      });
+    </script>
   </body>
 </html>
