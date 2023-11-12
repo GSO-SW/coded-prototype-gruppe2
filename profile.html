@@ -6,104 +6,51 @@
     <link rel="stylesheet" href="style.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite App</title>
-
-    <style>
-      /* Chrome, Safari, Edge, Opera */
-      input::-webkit-outer-spin-button,
-      input::-webkit-inner-spin-button {
-        -webkit-appearance: none;
-        margin: 0;
-      }
-
-      /* Firefox */
-      input[type="number"] {
-        -moz-appearance: textfield;
-      }
-    </style>
   </head>
 
-    <body class="bg-gray-100 p-10">
+  <body class="w-screen h-screen">
+    <a href="/main.html" class="p-4 text-5xl place-self-start">&#8678;</a>
+    <div class="flex flex-col flex-1 items-startjustify-center">
+      <span class="flex items-center self-start mt-8 mb-4 text-5xl">
+        <div class="mx-6">👤</div>
+        <h1 class="font-semibold">Profil</h1>
+      </span>
 
-      <div class="bg-white p-8 rounded-lg shadow-md w-96">
-        <div class="flex items-center mb-6">
-            <button class="mr-4 text-gray-600" id="backButton">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-6 w-6">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
-                </svg>
-            </button>
-        </div>
-        <div class="flex items-center justify-center mb-6">
-            <span class="text-2xl font-bold flex items-center">
-                <div class="text-4xl mr-4">👤</div>
-                <h1>Profil</h1> 
-            </span>      
-        </div>
-          <form>
-              <div class="mb-4">
-                  <label for="Name" class="block text-sm font-medium text-gray-600">Name</label>
-                  <input type="text" id="name" name="Name" placeholder="Name" class="mt-1 p-2 w-full border rounded-md text-lg">
-              </div>
-              <div class="mb-4">
-                  <label for="ausb_nummer" class="block text-sm font-medium text-gray-600">Ausbildungsnummer</label>
-                  <input type="text" id="ausb_nummer" name="ausb_nummer" placeholder="Ausbildungsnummer" class="mt-1 p-2 w-full border rounded-md text-lg">
-              </div>
-                  <div class="mb-4 w-[220px]">
-                    <label for="ausb_start" class="block text-sm font-medium text-gray-600">Ausbildungsbeginn</label>
-                    <input type="date" id="ausb_start" name="ausb_start" placeholder="tt.mm.jjjj" class="mt-1 p-2 w-full border rounded-md text-lg">      
-              </div>
-              <div class="mb-4">
-                  <label for="ausbilder" class="block text-sm font-medium text-gray-600">Ausbilder</label>
-                  <input type="text" id="ausbilder" name="ausbilder" placeholder="ausbilder" class="mt-1 p-2 w-full border rounded-md text-lg">
-              </div>
-              <div class="mb-4">
-                  <label for="abteilung" class="block text-sm font-medium text-gray-600">Standard Abteilung</label>
-                  <input type="text" id="abteilung" name="abteilung" placeholder="abteilung Abteilung" class="mt-1 p-2 w-full border rounded-md text-lg">
-              </div>
-              <div class="mt-4 flex w-[220px] justify-end items-end">
-                  <button type="submit" class="bg-black text-white p-2 rounded-md hover:bg-gray-900">Speichern</button>
-              </div>
-          </form>
-      </div>
-  
-      <script>
-        function formatDateToInput(date) {
-            const dd = String(date.getDate()).padStart(2, '0');
-            const mm = String(date.getMonth() + 1).padStart(2, '0'); // Monate sind von 0 bis 11 in JavaScript
-            const yyyy = date.getFullYear();
+      <form class="flex flex-col items-center">
+        <input
+          type="text"
+          class="m-4 h-14 border-2 border-black w-[75vw] max-w-sm px-3"
+          placeholder="Name"
+        />
+        <input
+          type="text"
+          class="m-4 h-14 border-2 border-black w-[75vw] max-w-sm px-3"
+          placeholder="Ausbildungsnummer"
+        />
+        <input
+          type="text"
+          class="m-4 h-14 border-2 border-black w-[75vw] max-w-sm px-3"
+          placeholder="Ausbildungsbeginn"
+        />
+        <input
+          type="text"
+          class="m-4 h-14 border-2 border-black w-[75vw] max-w-sm px-3"
+          placeholder="Ausbilder"
+        />
+        <input
+          type="text"
+          class="m-4 h-14 border-2 border-black w-[75vw] max-w-sm px-3"
+          placeholder="Standard Abteilung"
+        />
+      </form>
+    </div>
 
-            return yyyy + '-' + mm + '-' + dd;
-        }
-
-        document.addEventListener("DOMContentLoaded", (event) => {
-          const form = document.querySelector("form");
-          form.addEventListener("submit", function (e) {
-            e.preventDefault();
-            alert("Formular gesendet!");
-          });
-        });
-    
-        document
-          .getElementById("backButton")
-          .addEventListener("click", function () {
-            //alert('Zurück-Button wurde geklickt!');
-            window.history.back();
-          });
-    
-        document.addEventListener("DOMContentLoaded", (event) => {
-          document.getElementById("name").value = faker.name.findName();
-          document.getElementById("ausb_nummer").value = faker.random.number({
-            min: 1000,
-            max: 9999,
-          });
-            document.getElementById("ausb_start").value = formatDateToInput(faker.date.past());
-
-          document.getElementById("ausbilder").value = faker.name.findName();
-          document.getElementById("abteilung").value =
-            faker.commerce.department();
-        });
-      </script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/Faker/3.1.0/faker.min.js"></script> 
+    <div class="flex flex-col items-center mb-8 ml-auto mr-8 font-bold">
+      <a
+        href="/main.html"
+        class="flex items-center justify-center h-12 px-5 py-2 text-white bg-black w-36"
+        >Speichern</a
+      >
+    </div>
   </body>
-
-
 </html>
